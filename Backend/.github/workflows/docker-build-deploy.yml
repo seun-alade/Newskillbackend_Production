@@ -3,7 +3,7 @@ name: Build, Push, and Deploy Backend
 on:
   push:
     branches:
-      - docker
+      - newskill # Adjust this to your main branch name
 
 jobs:
   build:
