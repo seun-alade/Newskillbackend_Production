@@ -11,4 +11,6 @@ docker build -t backend-docker .
 docker run -d -p 5000:10000 --name newskill-backend-container backend-docker
 docker ps -a
 
+
+
  
