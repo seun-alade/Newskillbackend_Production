@@ -1,8 +1,6 @@
 
 cd Newskillbackend_Production/
 ls -lrt
-cd Backend/
-ls -lrt
 docker -v
 sudo chmod 777 ~/Newskillbackend_Production/Backend/mongo-db.sh 
 ~/Newskillbackend_Production/Backend/mongo-db.sh
