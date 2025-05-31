@@ -39,7 +39,7 @@ export const register = async (req, res) => {
     );
 
     // Create verification link
-    const verificationLink = `http://15.223.230.143/verify/${emailToken}`;
+    const verificationLink = `http://15.223.230.143:5000/verify/${emailToken}`;
 
     // Send email using NodeMailer
     const transporter = nodemailer.createTransport({
@@ -117,7 +117,7 @@ export const forgotPassword = async (req, res) => {
     user.resetTokenExpire = Date.now() + 3600000; // 1 hour
     await user.save();
 
-    const resetLink = `http://15.223.230.143/reset-password/${token}`;
+    const resetLink = `http://15.223.230.143:5000/reset-password/${token}`;
 
     console.log("Sending reset email to:", user.email);
 
@@ -184,7 +184,7 @@ export const sendVerificationEmail = async (user) => {
   user.resetTokenExpire = Date.now() + 3600000;
   await user.save();
 
-  const verifyLink = `http://15.223.230.143/verify/${token}`;
+  const verifyLink = `http://15.223.230.143:5000/verify/${token}`;
   await sendEmail({
     to: user.email,
     subject: "Verify Your Email",
