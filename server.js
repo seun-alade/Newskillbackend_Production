@@ -18,7 +18,7 @@ connectDB();
 
 app.use(
   cors({
-    origin: "https://15.223.230.143", // Replace with your frontend URL
+    origin: "http://15.223.230.143", // Replace with your frontend URL
     credentials: true,
   })
 );
@@ -40,5 +40,5 @@ app.use("/api", calendarRoutes);
 
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () =>
-  console.log(`Server running on https://15.223.230.143:${PORT}`)
+  console.log(`Server running on http://15.223.230.143:${PORT}`)
 );
