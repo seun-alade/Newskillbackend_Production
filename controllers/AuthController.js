@@ -293,7 +293,7 @@ export const register = async (req, res) => {
     });
 
     // Create verification link
-    const verificationLink = `https://15.223.230.143/verify/${emailToken}`; // Updated to use the UUID token
+    const verificationLink = `http://15.223.230.143/verify/${emailToken}`; // Updated to use the UUID token
 
     // Send email using NodeMailer
     const mailOptions = {
@@ -454,7 +454,7 @@ export const resendVerificationEmail = async (req, res) => {
     user.emailVerificationTokenExpire = Date.now() + 2 * 60 * 60 * 1000; // 2 hours
     await user.save();
 
-    const verificationLink = `https://15.223.230.143/verify/${emailToken}`; // Updated to use the UUID token
+    const verificationLink = `http://15.223.230.143/verify/${emailToken}`; // Updated to use the UUID token
 
     // Using the generic sendEmail utility from "../utils/sendEmail.js"
     // Ensure your sendEmail utility is configured to use the transporter or has its own.
